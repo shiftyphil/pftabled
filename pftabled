@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon_execdir="/opt/vpnauth/pftabled"
+daemon="/usr/local/bin/python3 /opt/vpnauth/pftabled/pftabled.py"
+daemon_flags="--table vpn_authorised --socket=/var/run/vpnauth/pftabled.sock"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=NO
+rc_reload=NO
+
+rc_cmd $1
